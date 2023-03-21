@@ -82,14 +82,8 @@ def send_data_to_api():
 
 # Create submit button
 if st.sidebar.button('Submit'):
-    # Print selected input values
-    st.write('### Selected Input Values')
-    st.write(f'BMI: {BMI} {type(BMI)}')
-    st.write(
-        f'Sleep Duration: {Sleep_Duration_hours} hours {type(Sleep_Duration_hours)}')
-    st.write(f'Smoking Index: {Smoking_Status} {type(Smoking_Status)}')
-    st.write(
-        f'Drinking Index: {Alcohol_Consumption_drinks_per_week} {type(Alcohol_Consumption_drinks_per_week)}')
+    # Send the acquired data to the database
+    send_data_to_api()
 
     # Convert categorical input to numerical using one-hot encoding
     if gender == 'Male':
